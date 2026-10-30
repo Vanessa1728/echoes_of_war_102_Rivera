@@ -1,0 +1,281 @@
+
+@use "../../styles/variables" as *;
+
+.recipe-info {
+  min-height: 100vh;
+  background: $color-background;
+  color: $color-text;
+
+  &__header {
+    min-height: 75px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: $color-surface;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    background: transparent;
+    color: $color-primary;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__back span {
+    font-size: 22px;
+  }
+
+  &__brand {
+    font-family: $font-title;
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  &__hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 65px 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+  }
+
+  &__image-container {
+    height: 390px;
+    overflow: hidden;
+    border-radius: $radius-large;
+    background: #e8eadc;
+    box-shadow: $shadow-card;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__intro {
+    max-width: 500px;
+  }
+
+  &__category {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 25px;
+    background: #e8eadc;
+    color: $color-primary-dark;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &__intro h1 {
+    margin: 20px 0 15px;
+    font-family: $font-title;
+    font-size: clamp(36px, 5vw, 55px);
+    line-height: 1.12;
+    font-weight: 500;
+  }
+
+  &__description {
+    color: $color-muted;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 35px;
+  }
+
+  &__stats > div {
+    padding: 17px 12px;
+    border: 1px solid $color-border;
+    border-radius: $radius-medium;
+    background: $color-surface;
+  }
+
+  &__stats > div > span {
+    color: $color-primary;
+    font-size: 22px;
+  }
+
+  &__stats p {
+    margin: 8px 0 5px;
+    color: $color-muted;
+    font-size: 12px;
+  }
+
+  &__stats strong {
+    font-size: 12px;
+  }
+
+  &__content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 35px 85px;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+    gap: 55px;
+  }
+
+  &__ingredients,
+  &__preparation {
+    padding: 35px;
+    border-radius: $radius-large;
+    background: $color-surface;
+    box-shadow: $shadow-card;
+  }
+
+  &__eyebrow {
+    color: $color-primary;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  &__content h2 {
+    margin: 12px 0;
+    font-family: $font-title;
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  &__section-description {
+    margin-bottom: 25px;
+    color: $color-muted;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  &__ingredients ul,
+  &__preparation ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__ingredients li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid $color-border;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  &__bullet {
+    flex-shrink: 0;
+    color: $color-primary;
+    font-weight: 700;
+  }
+
+  &__preparation li {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 17px 0;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__step-number {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e8eadc;
+    color: $color-primary-dark;
+    font-family: $font-title;
+    font-size: 16px;
+  }
+
+  &__preparation li p {
+    margin: 5px 0;
+    color: #62675d;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  &__footer {
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background: #e8eadc;
+    font-family: $font-title;
+  }
+
+  &__footer p {
+    margin: 0;
+  }
+
+  &__footer span {
+    color: $color-muted;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 750px) {
+  .recipe-info {
+    &__header {
+      padding: 16px 20px;
+      flex-wrap: wrap;
+    }
+
+    &__brand {
+      font-size: 15px;
+    }
+
+    &__hero {
+      padding: 35px 20px;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    &__image-container {
+      height: 280px;
+    }
+
+    &__stats {
+      gap: 8px;
+    }
+
+    &__stats > div {
+      padding: 12px 8px;
+    }
+
+    &__stats strong {
+      font-size: 11px;
+    }
+
+    &__content {
+      padding: 20px 20px 55px;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    &__ingredients,
+    &__preparation {
+      padding: 25px 20px;
+    }
+
+    &__footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}

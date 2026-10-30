@@ -1,0 +1,122 @@
+
+.recipe-card {
+  background: #fffefa;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #eee9df;
+  box-shadow: 0 5px 20px rgba(58, 72, 53, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 30px rgba(58, 72, 53, 0.13);
+  }
+
+  &__image-container {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  &:hover &__image {
+    transform: scale(1.06);
+  }
+
+  &__category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #fffefa;
+    color: #566b4d;
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  &__content {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__details {
+    display: flex;
+    gap: 18px;
+    color: #788071;
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  &__title {
+    color: #354533;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    margin: 0 0 10px;
+  }
+
+  &__description {
+    color: #77776e;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 22px;
+    flex: 1;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid #eee9df;
+    padding-top: 17px;
+  }
+
+  &__servings {
+    color: #858579;
+    font-size: 12px;
+  }
+
+  &__button {
+    background: #657b59;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 11px 17px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #435a3c;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-card {
+    &__image-container {
+      height: 200px;
+    }
+
+    &__content {
+      padding: 18px;
+    }
+
+    &__title {
+      font-size: 21px;
+    }
+  }
+}

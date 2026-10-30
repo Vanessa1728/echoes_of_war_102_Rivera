@@ -1,0 +1,205 @@
+
+@use "../../styles/variables" as *;
+
+.home {
+  min-height: 100vh;
+  background: $color-background;
+  color: $color-text;
+
+  &__hero {
+    min-height: 440px;
+    padding: 85px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background:
+      radial-gradient(circle at 85% 25%, rgba(255, 255, 255, 0.55), transparent 25%),
+      linear-gradient(120deg, #e8eadc, #f3eee4);
+  }
+
+  &__hero-content {
+    max-width: 650px;
+  }
+
+  &__eyebrow {
+    color: $color-primary;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+  }
+
+  &__hero h1 {
+    margin: 18px 0;
+    font-family: $font-title;
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.1;
+    font-weight: 500;
+  }
+
+  &__hero h1 span {
+    display: block;
+    color: $color-primary;
+    font-style: italic;
+  }
+
+  &__hero-content > p {
+    max-width: 480px;
+    color: #74766b;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  &__hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 18px;
+    padding: 14px 23px;
+    border-radius: 30px;
+    background: $color-primary;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s ease;
+  }
+
+  &__hero-button:hover {
+    background: $color-primary-dark;
+  }
+
+  &__hero-decoration {
+    width: 190px;
+    height: 190px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(101, 123, 89, 0.35);
+    border-radius: 50%;
+    color: $color-primary;
+    transform: rotate(8deg);
+  }
+
+  &__hero-decoration span {
+    font-size: 55px;
+  }
+
+  &__hero-decoration p {
+    font-family: $font-title;
+    font-style: italic;
+  }
+
+  &__recipes {
+    max-width: 1200px;
+    margin: auto;
+    padding: 85px 35px;
+  }
+
+  &__section-heading {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+
+  &__section-heading h2 {
+    margin: 12px 0;
+    font-family: $font-title;
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 500;
+  }
+
+  &__section-heading p {
+    color: $color-muted;
+    font-size: 14px;
+  }
+
+  &__results {
+    margin: 25px 0 16px;
+    color: $color-muted;
+    font-size: 13px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  &__empty {
+    padding: 55px 20px;
+    text-align: center;
+    background: $color-surface;
+    border-radius: $radius-large;
+  }
+
+  &__empty > span {
+    color: $color-accent;
+    font-size: 40px;
+  }
+
+  &__empty h3 {
+    font-family: $font-title;
+    font-size: 27px;
+  }
+
+  &__empty p {
+    color: $color-muted;
+  }
+
+  &__empty button {
+    margin-top: 12px;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 25px;
+    background: $color-primary;
+    color: white;
+    cursor: pointer;
+  }
+
+  &__footer {
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background: #e8eadc;
+    color: $color-text;
+    font-family: $font-title;
+  }
+
+  &__footer p {
+    margin: 0;
+  }
+
+  &__footer span {
+    color: $color-muted;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 700px) {
+  .home {
+    &__hero {
+      min-height: auto;
+      padding: 65px 25px;
+    }
+
+    &__hero-decoration {
+      display: none;
+    }
+
+    &__recipes {
+      padding: 60px 20px;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
